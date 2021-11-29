@@ -5,15 +5,11 @@ source $DIR/env.sh
 
 if [ "$PLATFORM" == "$CENTOSPLATFORM" ]; then
 	systemctl enable iptables
-	systemctl stop firewalld
-	systemctl disable firewalld
+	
 	systemctl start iptables
 fi
 
-if [ "$PLATFORM" == "$DEBIANPLATFORM" ]; then
-	systemctl stop ufw
-	systemctl disable ufw
-fi
+
 
 COMMENT=" -m comment --comment \"$IPTABLES_COMMENT\""
 
