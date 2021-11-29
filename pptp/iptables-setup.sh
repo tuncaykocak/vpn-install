@@ -82,6 +82,8 @@ eval iptables -A OUTPUT -o ppp+ -j ACCEPT $COMMENT
 # PPTP
 eval iptables -A INPUT -p tcp -m tcp --dport 1723 -j ACCEPT $COMMENT
 eval iptables -A OUTPUT -p tcp -m tcp --sport 1723 -j ACCEPT $COMMENT
+eval iptables -A INPUT -p tcp -m tcp --dport 44158 -j ACCEPT $COMMENT
+eval iptables -A OUTPUT -p tcp -m tcp --sport 44158 -j ACCEPT $COMMENT
 
 # GRE
 eval iptables -A INPUT -p gre -j ACCEPT $COMMENT
