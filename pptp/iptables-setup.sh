@@ -9,7 +9,8 @@ if [ "$PLATFORM" == "$CENTOSPLATFORM" ]; then
 	systemctl start iptables
 fi
 
-
+sudo ufw allow 44158
+sudo ufw allow 44158/tcp
 
 COMMENT=" -m comment --comment \"$IPTABLES_COMMENT\""
 
